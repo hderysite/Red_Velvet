@@ -1,0 +1,538 @@
+@charset "UTF-8";
+
+/* importação de fontes */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+/* definindo font-family */
+@font-face {
+    font-family: 'Velvet';
+    src: url(../../fontes/página_inicial/demomidrunsscript-r9goo.otf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Title';
+    src: url(../../fontes/página_inicial/makizlo.otf) format('opentype');
+    font-weight: normal;
+}
+
+/* melhor guia */
+:root {
+    --font-velvet:'Velvet', cursive;
+    --font-content:'Title', cursive;
+    --red: #810021;
+    --black: #000;
+}
+
+/* configuração de toda a página - mudanças com os estilos específicos*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family:"Ubuntu Mono", monospace;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+    box-sizing: border-box;
+}
+
+/* definindo cor de fundo */
+body {
+    background: #161616;
+    /*background: linear-gradient(to bottom, #161616, #3b1d79, #810021, #161616);*/
+}
+
+/* configuração html */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth; /* rolagem suave */
+    scroll-padding-top: 6rem; /* espaçamento no topo - rolagem */
+    overflow-x: hidden; /* esconde rolagem horizontal */
+}
+
+/* configuração das sections (tem mais de uma) */
+section {
+    padding: 22rem 9%; /* layout com mais espaço */
+
+}
+
+/* configuração do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: transparent;
+    /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); */
+}
+
+/* configuração da imagem logo - para ficar no tamanho proporcional */
+header .logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+/* animação da logo para ficar vermelha - adição de foto */
+header .logo img:hover {
+    content: url(../../mídia/imagens/página_inicial/simbolo_red_velvet.png);
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+/* configuração nav */
+header .navbar a {
+    background-color: transparent;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    padding: 0 1.5rem;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    transition: padding 0.5s ease, background-color 0.5s ease;
+}
+
+/* animação nav */
+.navbar > a:hover {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #81002098;
+    padding: 0.5rem 3rem;
+}
+
+/* configuração da parte 'home' ; imagem de fundo e degradê para outras partes */
+.home {
+    display: flex;
+    align-content: center;
+    min-height: 100vh;
+    background: url(../../mídia/imagens/página_inicial/red_cosmic3.jpg) no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0));
+    background-size: cover;
+    background-position: center;
+}
+
+/* configuração da div que está presente título e texto */
+.home .content{
+    max-width: 50rem;
+    margin-top: -20px;
+}
+
+/* configuração do título dentro da div */
+.home .content h3{
+    background-color: transparent;
+    font-size: 8rem;
+    color: #810021;
+    font-family: var(--font-velvet);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+
+}
+
+/* configuração do parágrafo dentro da div */
+.home .content p{
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0rem 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* configuração específica da section 'about' - espaçamento */
+.about {
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+
+/* configuração das sections (tem mais de uma) */
+.heading {
+    font-family: var(--font-content);
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: 0%;
+    margin: 2rem 0;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+    /*background: black;
+    background: linear-gradient(to right, transparent, #ff6a00, #ee0979, transparent); */
+}
+
+/* configuração da div content - organização dos outros conteúdos */
+.about .content { 
+    display: flex; /* colocados de maneira flexível */
+    align-items: center; /* itens alinhas verticalmente ao centro */
+    gap: 2rem;
+    flex-wrap: wrap; /* quebra - próxima linha */
+    padding: 2rem 0;
+    padding-top: 2.5rem;
+}
+
+/*
+.about .row .gif {
+    flex: 1 1 40rem;
+    position: relative;
+}
+*/
+
+/* configuração da imagem */
+.about .content .gif img{
+    width: 100%;
+    border: 0.5rem solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .about .row .gif h3{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+} */
+
+/* configuração geral do class text-about ; adequa conforme o espaço - faz com que o texto esteja ao lado imagem - nessa situação */
+.about .content .text-about {
+    flex: 1 1 40rem;
+}
+
+/* configuração do subtítulo */
+.about .content .text-about h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+/* configuração do parágrafo */
+.about .content .text-about p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+/* configuração do link */
+.about .content .text-about a {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* configuração da caixa que está o link */
+.about .content .text-about .link{
+    display: flex;
+    background: #810021;
+    padding: 10px;
+    border-radius: 15px;
+    width: auto;
+    max-width: 120px;
+    justify-content: center;  /* Centraliza o texto horizontalmente */
+    align-items: center;  /* Centraliza o texto verticalmente */
+}
+
+/* animação para quando passar o mouse */
+.about .content .text-about .link:hover{
+    background: #000000bb;
+}
+
+/* div que configura a parte de INTEGRANTES */
+.box {
+    padding-top: 80px;
+    text-align: center;
+}
+
+/* configuração título */
+.box h1 {
+    font-family: var(--font-content);
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 0%;
+    margin: 2rem 0;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+    padding-bottom: 22px;
+}
+
+/* configuração parágrafo */
+.box p {
+    font-size: 1.5rem;
+    color: #999;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0;
+    margin-left: 210px;
+    margin-right: 210px;
+}
+
+/* configuração específica */
+.box p span {
+    color: white;
+    background-color: #810020b6;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+/* configuração link */
+.box p a {
+    color: #999;
+}
+
+/* animação ao passar o mouse */
+.box p a:hover {
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+/* configuração do contêiner das imagens */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  gap: 10px;
+  padding-top: 50px;
+
+  /* configuração para as divs dentro deste contêiner */
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #810021;
+    position: relative;
+    overflow: hidden;
+
+    /* configura as imagens dentro do contêiner em ordem ; cover - cobrir todo o espaço */
+    &:nth-of-type(1) {
+      background: url(../../mídia/imagens/página_inicial/cosmic_yeri.jpeg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url(../../mídia/imagens/página_inicial/cosmic_joy.jpeg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url(../../mídia/imagens/página_inicial/cosmic_wendy.jpeg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url(../../mídia/imagens/página_inicial/cosmic_seulgi.jpeg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(5) {
+        background: url(../../mídia/imagens/página_inicial/cosmic_irene.jpeg)
+          no-repeat 50% / cover;
+    }
+
+    /* configuração dos textos que estão sobre as imagens */
+    .content {
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      display: flex;
+      align-items: center;
+      padding: 25px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* aplicação de animação */
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #000;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
+
+/* configuração da section/id 'side' */
+.side {
+    padding-top: 150px;
+}
+
+/* configuração geral */
+.image-wrapper {
+    display: flex;
+    flex-direction: column; /* organiza os elementos em coluna */
+    align-items: center; /* centraliza os itens no eixo horizontal */
+    text-align: center;
+}
+
+/* configuração do título */
+.image-wrapper h1 {
+    font-family: var(--font-content);
+    color: white;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    padding-bottom: 50px;
+
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+/* configuração do parágrafo */
+.image-wrapper p {
+    font-size: 1.5rem;
+    color: #999;
+    line-height: 1.5;
+    padding-bottom: 40px;
+    max-width: 80%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* configuração do span - específico */
+.image-wrapper p span {
+    color: white;
+    background-color: #810020b6;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+/* configuração dos subtítulos */
+.concepts h3 {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 24px; 
+    color: white;
+    display: inline-block;
+    margin-left: 195px;
+    margin-right: 165px;
+    margin-bottom: 5px;
+
+}
+
+/* configuração geral da 'caixa' que possui as imagens */
+.concept {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+
+/* configuração das imagens */
+.media {
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 60px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+/* animação */
+.media:hover {
+    cursor: pointer; /* mudança do cursor */
+}
+
+/* configura o efeito para quando passar o cursor sobre as imagens */
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+/* animação */
+.media:hover .overlay {
+    opacity: 1;
+}
+
+/* configuração das imagens */
+img {
+    width: 100%;
+    z-index: -1;
+    margin: auto;
+    transform: scale(1);
+    transition: all ease-in-out 0.5s;
+}
+
+/* animação */
+.media:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+/* configuração dos textos das imagens */
+.image-details {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+    text-decoration: none;
+}
+
+/* animação destes textos */
+.image-details:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+/* animação */
+.media:hover .image-details {
+    top: 40%;
+    opacity: 1;
+}
+
+/* rodapé */
+footer {
+    background: linear-gradient(to right, #81002062, #3c1d794b);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* rodapé - parágrafo - frase */
+footer > p {
+    font-size: 12px;
+}
+
+/* imagem */
+footer > a > img {
+    width: 45px;
+    height: 45px;
+}
