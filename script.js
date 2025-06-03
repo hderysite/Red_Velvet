@@ -20,55 +20,103 @@ function prevSlide() {
   showSlide(currentIndex);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const readMoreBtn = document.getElementById('readMoreBtn');
-  const extraText = document.getElementById('extraInfo');
 
-  if (readMoreBtn && extraText) {
-    extraText.classList.remove('active');
+const lightBtn = document.getElementById("light-mode");
+const darkBtn = document.getElementById("dark-mode");
+const body = document.body;
+const homeSection = document.querySelector(".home");
 
-    readMoreBtn.addEventListener('click', function (event) {
-      event.preventDefault();
+function ativarModoClaro() {
+    body.classList.add("light-mode");
+    homeSection.classList.add("light-mode");
+    lightBtn.classList.add("active");
+    darkBtn.classList.remove("active");
+    atualizarImagens(true);
+    localStorage.setItem("modo", "claro");
+}
 
-      extraText.classList.toggle('active');
+function ativarModoEscuro() {
+    body.classList.remove("light-mode");
+    homeSection.classList.remove("light-mode");
+    lightBtn.classList.remove("active");
+    darkBtn.classList.add("active");
+    atualizarImagens(false);
+    localStorage.setItem("modo", "escuro");
+}
 
-      if (extraText.classList.contains('active')) {
-        readMoreBtn.textContent = 'LEIA MENOS';
-      } else {
-        readMoreBtn.textContent = 'LEIA MAIS';
-      }
-    });
-  }
+function atualizarImagens(modoClaroAtivo) {
+    const imagensIntegrantes = {
+        "integrante-yeri": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_yeri.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_yeri.jpg"
+        },
+        "integrante-joy": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_joy.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_joy.jpeg"
+        },
+        "integrante-wendy": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_wendy.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_wendy.jpeg"
+        },
+        "integrante-seulgi": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_seulgi.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_seulgi.jpg"
+        },
+        "integrante-irene": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_irene.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_irene.jpg"
+        },
+        "cover_feel_my_rhythm": {
+            dark: "root/mídia/imagens/página_inicial/cover-feel_my_rhythm.png",
+            light: "root/mídia/imagens/página_inicial/cover_feel.png"
+        },
+        "cover_peek_a_boo": {
+            dark: "root/mídia/imagens/página_inicial/cover-peek_a_boo.png",
+            light: "root/mídia/imagens/página_inicial/cover_red.png"
+        },
+        "gif_group": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_gif.webp",
+            light: "root/mídia/imagens/página_inicial/feel_gif.gif"
+        }
+    };
+
+    for (let integrante in imagensIntegrantes) {
+        const el = document.getElementById(integrante);
+        if (el) {
+            el.src = modoClaroAtivo
+                ? imagensIntegrantes[integrante].light
+                : imagensIntegrantes[integrante].dark;
+        }
+    }
+}
+
+lightBtn.addEventListener("click", ativarModoClaro);
+darkBtn.addEventListener("click", ativarModoEscuro);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modoSalvo = localStorage.getItem("modo");
+    if (modoSalvo === "claro") {
+        ativarModoClaro();
+    } else {
+        ativarModoEscuro();
+    }
 });
 
 
-const toggleBtn = document.getElementById('toggleThemeBtn');
-const body = document.body;
 
-const imagesToSwap = [
-  {
-    id: 'cosmicGif',
-    darkSrc: 'root/mídia/imagens/página_inicial/cosmic_gif.webp',
-    lightSrc: 'root/mídia/imagens/página_inicial/cosmic_gif_light.webp',
-  },
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreBtn = document.querySelector(".read-more-btn");
+  const extraText = document.querySelector(".extra-text");
 
-toggleBtn.addEventListener('click', () => {
-  body.classList.toggle('light-mode');
+  if (readMoreBtn && extraText) {
+    readMoreBtn.addEventListener("click", function () {
+      extraText.classList.toggle("active");
 
-  if (body.classList.contains('light-mode')) {
-    toggleBtn.textContent = 'Modo Escuro';
-
-    imagesToSwap.forEach(({ id, lightSrc }) => {
-      const img = document.getElementById(id);
-      if (img) img.src = lightSrc;
-    });
-  } else {
-    toggleBtn.textContent = 'Modo Claro';
-
-    imagesToSwap.forEach(({ id, darkSrc }) => {
-      const img = document.getElementById(id);
-      if (img) img.src = darkSrc;
+      if (extraText.classList.contains("active")) {
+        readMoreBtn.textContent = "LEIA MENOS";
+      } else {
+        readMoreBtn.textContent = "LEIA MAIS";
+      }
     });
   }
 });
