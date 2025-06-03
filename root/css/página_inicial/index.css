@@ -18,8 +18,8 @@
 
 /* melhor guia */
 :root {
-    --font-velvet:'Velvet', cursive;
-    --font-content:'Title', cursive;
+    --font-velvet: 'Velvet', cursive;
+    --font-content: 'Title', cursive;
     --red: #810021;
     --black: #000;
 }
@@ -28,7 +28,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family:"Ubuntu Mono", monospace;
+    font-family: "Ubuntu Mono", monospace;
     outline: none;
     border: none;
     text-decoration: none;
@@ -45,14 +45,70 @@ body {
 /* configuração html */
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth; /* rolagem suave */
-    scroll-padding-top: 6rem; /* espaçamento no topo - rolagem */
-    overflow-x: hidden; /* esconde rolagem horizontal */
+    scroll-behavior: smooth;
+    /* rolagem suave */
+    scroll-padding-top: 6rem;
+    /* espaçamento no topo - rolagem */
+    overflow-x: hidden;
+    /* esconde rolagem horizontal */
 }
+
+:root {
+    --bg-color: #161616;
+    --text-color: #eee;
+    --primary-color: #810021;
+    /* vermelho vinho */
+    --secondary-color: #3b1d79;
+    --btn-bg: #810021;
+    --btn-hover-bg: #000000bb;
+    --carousel-bg: #fff;
+    /* branco atual */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.toggle-theme-btn {
+    background-color: var(--btn-bg);
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button.toggle-theme-btn:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+/* carousel: muda fundo para cinza escuro no escuro, e cinza claro no claro */
+.carousel-container {
+    background-color: var(--carousel-bg);
+    transition: background-color 0.3s;
+}
+
+/* Modo claro: cores invertidas/alteradas */
+body.light-mode {
+    --bg-color: #f2f2f2;
+    --text-color: #222;
+    --primary-color: #b03a4d;
+    /* vermelho claro */
+    --secondary-color: #7a5a8f;
+    --btn-bg: #b03a4d;
+    --btn-hover-bg: #a04455;
+    --carousel-bg: #ddd;
+    /* cinza claro */
+}
+
 
 /* configuração das sections (tem mais de uma) */
 section {
-    padding: 22rem 9%; /* layout com mais espaço */
+    padding: 22rem 9%;
+    /* layout com mais espaço */
 
 }
 
@@ -99,7 +155,7 @@ header .navbar a {
 }
 
 /* animação nav */
-.navbar > a:hover {
+.navbar>a:hover {
     color: #fff;
     border-radius: 5px;
     background-color: #81002098;
@@ -118,14 +174,23 @@ header .navbar a {
     background-position: center;
 }
 
+body.light-mode .home {
+  background: url(../../mídia/imagens/página_inicial/) no-repeat;
+  /* Ajuste da máscara se quiser, ou pode remover */
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-size: cover;
+  background-position: center;
+}
+
 /* configuração da div que está presente título e texto */
-.home .content{
+.home .content {
     max-width: 50rem;
     margin-top: -20px;
 }
 
 /* configuração do título dentro da div */
-.home .content h3{
+.home .content h3 {
     background-color: transparent;
     font-size: 8rem;
     color: #810021;
@@ -135,7 +200,7 @@ header .navbar a {
 }
 
 /* configuração do parágrafo dentro da div */
-.home .content p{
+.home .content p {
     background-color: transparent;
     font-size: 1.5rem;
     color: #fff;
@@ -166,43 +231,27 @@ header .navbar a {
 }
 
 /* configuração da div content - organização dos outros conteúdos */
-.about .content { 
-    display: flex; /* colocados de maneira flexível */
-    align-items: center; /* itens alinhas verticalmente ao centro */
+.about .content {
+    display: flex;
+    /* colocados de maneira flexível */
+    align-items: center;
+    /* itens alinhas verticalmente ao centro */
     gap: 2rem;
-    flex-wrap: wrap; /* quebra - próxima linha */
+    flex-wrap: wrap;
+    /* quebra - próxima linha */
     padding: 2rem 0;
     padding-top: 2.5rem;
 }
 
-/*
-.about .row .gif {
-    flex: 1 1 40rem;
-    position: relative;
-}
-*/
-
 /* configuração da imagem */
-.about .content .gif img{
+.about .content .gif img {
     width: 100%;
     border: 0.5rem solid #fff;
     border-radius: 50%;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     height: 100%;
     object-fit: cover;
 }
-
-/* .about .row .gif h3{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    background: #fff;
-    width: 100%;
-    padding: 1rem 2rem;
-    text-align: center;
-    mix-blend-mode: screen;
-} */
 
 /* configuração geral do class text-about ; adequa conforme o espaço - faz com que o texto esteja ao lado imagem - nessa situação */
 .about .content .text-about {
@@ -234,20 +283,52 @@ header .navbar a {
 }
 
 /* configuração da caixa que está o link */
-.about .content .text-about .link{
+.about .content .text-about .link {
     display: flex;
     background: #810021;
     padding: 10px;
     border-radius: 15px;
     width: auto;
     max-width: 120px;
-    justify-content: center;  /* Centraliza o texto horizontalmente */
-    align-items: center;  /* Centraliza o texto verticalmente */
+    justify-content: center;
+    /* Centraliza o texto horizontalmente */
+    align-items: center;
+    /* Centraliza o texto verticalmente */
 }
 
 /* animação para quando passar o mouse */
-.about .content .text-about .link:hover{
+.about .content .text-about .link:hover {
     background: #000000bb;
+}
+
+.extra-text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.extra-text.active {
+    max-height: 300px;
+    /* ajuste conforme precisar */
+    opacity: 1;
+}
+
+
+.read-more-btn {
+    display: block;
+    margin-top: 10px;
+    background: #810021;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #000000bb;
 }
 
 /* div que configura a parte de INTEGRANTES */
@@ -301,82 +382,98 @@ header .navbar a {
 }
 
 /* configuração do contêiner das imagens */
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 400px;
-  gap: 10px;
-  padding-top: 50px;
-
-  /* configuração para as divs dentro deste contêiner */
-  > div {
-    flex: 0 0 120px;
-    border-radius: 0.5rem;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-    box-shadow: 1px 5px 15px #810021;
+.carousel-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
     position: relative;
-    overflow: hidden;
+    background: #2a2a2a;
+    /* cinza escuro */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(129, 0, 33, 0.7);
+    /* sombra vermelho vinho suave */
+    padding: 20px;
+    color: #eee;
+    /* texto claro */
+    font-family: "Ubuntu Mono", monospace;
+}
 
-    /* configura as imagens dentro do contêiner em ordem ; cover - cobrir todo o espaço */
-    &:nth-of-type(1) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_yeri.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(2) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_joy.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(3) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_wendy.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(4) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_seulgi.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(5) {
-        background: url(../../mídia/imagens/página_inicial/cosmic_irene.jpeg)
-          no-repeat 50% / cover;
-    }
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-    /* configuração dos textos que estão sobre as imagens */
-    .content {
-      font-size: 1.5rem;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      display: flex;
-      align-items: center;
-      padding: 25px;
-      opacity: 0;
-      flex-direction: column;
-      height: 100%;
-      justify-content: flex-end;
-      transform: translatey(100%);
-      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
-      visibility: hidden;
+.slide {
+    min-width: 100%;
+    display: none;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #eee;
+}
 
-      span {
-        display: block;
-        margin-top: 5px;
-        font-size: 1.2rem;
-      }
-    }
+.slide.active {
+    display: flex;
+}
 
-    /* aplicação de animação */
-    &:hover {
-      flex: 0 0 250px;
-      box-shadow: 1px 3px 15px #000;
-      transform: translatey(-30px);
-    }
+.slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+    border: 3px solid #810021;
+    /* borda vermelho vinho */
+    box-shadow: 0 0 10px #810021aa;
+}
 
-    &:hover .content {
-      opacity: 1;
-      transform: translatey(0%);
-      visibility: visible;
-    }
-  }
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.slide-content h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 3px #810021;
+}
+
+.slide-content span {
+    font-size: 18px;
+    color: #bbb;
+}
+
+/* Botões de navegação */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    background: #810021;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    color: #eee;
+    box-shadow: 0 0 10px #810021cc;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.nav:hover {
+    background: #a31738;
+    box-shadow: 0 0 15px #a31738cc;
+}
+
+.nav.prev {
+    left: -60px;
+}
+
+.nav.next {
+    right: -60px;
 }
 
 /* configuração da section/id 'side' */
@@ -387,8 +484,10 @@ header .navbar a {
 /* configuração geral */
 .image-wrapper {
     display: flex;
-    flex-direction: column; /* organiza os elementos em coluna */
-    align-items: center; /* centraliza os itens no eixo horizontal */
+    flex-direction: column;
+    /* organiza os elementos em coluna */
+    align-items: center;
+    /* centraliza os itens no eixo horizontal */
     text-align: center;
 }
 
@@ -427,7 +526,7 @@ header .navbar a {
 /* configuração dos subtítulos */
 .concepts h3 {
     font-family: "Ubuntu Mono", monospace;
-    font-size: 24px; 
+    font-size: 24px;
     color: white;
     display: inline-block;
     margin-left: 195px;
@@ -439,7 +538,7 @@ header .navbar a {
 /* configuração geral da 'caixa' que possui as imagens */
 .concept {
     display: flex;
-    gap: 20px; 
+    gap: 20px;
     justify-content: center;
 }
 
@@ -458,7 +557,8 @@ header .navbar a {
 
 /* animação */
 .media:hover {
-    cursor: pointer; /* mudança do cursor */
+    cursor: pointer;
+    /* mudança do cursor */
 }
 
 /* configura o efeito para quando passar o cursor sobre as imagens */
@@ -478,7 +578,7 @@ header .navbar a {
 }
 
 /* configuração das imagens */
-img {
+.media img {
     width: 100%;
     z-index: -1;
     margin: auto;
@@ -527,12 +627,12 @@ footer {
 }
 
 /* rodapé - parágrafo - frase */
-footer > p {
+footer>p {
     font-size: 12px;
 }
 
 /* imagem */
-footer > a > img {
+footer>a>img {
     width: 45px;
     height: 45px;
 }
