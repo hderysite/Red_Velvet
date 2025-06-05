@@ -437,6 +437,7 @@ header .navbar a {
     display: flex;
     gap: 20px; 
     justify-content: center;
+    flex-direction: column;
 }
 
 .concepts h3 {
@@ -468,6 +469,10 @@ header .navbar a {
 
 .media .overlay {
     pointer-events: none;
+}
+
+.image-details p {
+    display: none;
 }
 
 /* rodapé */
@@ -651,6 +656,7 @@ body.light-mode .box a {
 
     section {
         padding: 10rem 5%;
+        font-size: 45px;
     }
 
     header {
@@ -669,13 +675,13 @@ body.light-mode .box a {
 
     .mode-buttons .mode-btn,
     .mode-selector .mode-btn {
-        font-size: 1.2rem;
-        padding: 0.3rem 0.7rem;
+        font-size: 2rem;
+        padding: 1rem 1.7rem;
         margin: 0 2px;
     }
 
     .mode-selector i {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
 
     .navbar > a:hover {
@@ -713,8 +719,7 @@ body.light-mode .box a {
     }
 
     .home .content p {
-        font-size: 1.2rem;
-        text-align: center;
+        text-align: justify;
     }
 
     .about {
@@ -737,7 +742,7 @@ body.light-mode .box a {
 
     .about .content .text-about {
         flex: 1 1 100%;
-        text-align: center;
+        text-align: justify;
     }
 
     .about .content .text-about h3 {
@@ -746,7 +751,6 @@ body.light-mode .box a {
     }
 
     .about .content .text-about p {
-        font-size: 1.3rem;
         padding: 0 1rem 10px;
     }
 
@@ -758,11 +762,11 @@ body.light-mode .box a {
     }
 
     .box p {
+        text-align: justify;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding: 0 1rem;
-        font-size: 1.3rem;
     }
 
     .carousel-container {
@@ -813,7 +817,7 @@ body.light-mode .box a {
     }
 
     .slide-content ul {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: #fff;
         padding-left: 1.2rem;
         line-height: 1.4;
@@ -852,7 +856,7 @@ body.light-mode .box a {
     }
 
     .image-wrapper p {
-        font-size: 1.3rem;
+        text-align: justify;
         max-width: 90%;
         padding-bottom: 20px;
     }
@@ -865,13 +869,25 @@ body.light-mode .box a {
     }
 
     .concept {
-        flex-direction: column;
+        display: flex !important;  
+        flex-direction: column !important; 
+        align-items: center !important;   
         gap: 20px;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .media {
-        width: 80%;
-        margin: 0 auto;
+        width: 80% !important;
+        max-width: 320px;      
+        margin: 0 auto !important;
+        display: block !important;  
+    }
+
+    .media img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     footer {
@@ -883,5 +899,3 @@ body.light-mode .box a {
         font-size: 10px;
     }
 }
-
-
