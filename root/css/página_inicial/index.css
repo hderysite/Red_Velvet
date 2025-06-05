@@ -699,7 +699,7 @@ body.light-mode .box a {
     }
 
     header {
-        padding: 10px 5%;
+        margin-top: 25px;
         justify-content: center;
     }
 
@@ -722,7 +722,7 @@ body.light-mode .box a {
         -webkit-mask-image: none !important;
         mask-image: none !important;
         min-height: auto !important;
-        padding: 2rem 1rem;
+        margin-top: 50px;
     }
 
     .home.light-mode {
@@ -776,11 +776,19 @@ body.light-mode .box a {
 
     .about .content .text-about h3 {
         font-size: 2.5rem;
+        padding-bottom: 15px;
     }
 
     .about .content .text-about p {
         font-size: 1.3rem;
         padding: 0 1rem 10px;
+    }
+
+    #gif_group {
+        width: 300px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
     }
 
     .box p {
@@ -859,6 +867,11 @@ body.light-mode .box a {
         transform: translateY(-50%);
         font-size: 24px;
         padding: 8px 12px;
+    }
+
+    .nav.prev,
+    .nav.next {
+        color: #000 !important; 
     }
 
     .side {
