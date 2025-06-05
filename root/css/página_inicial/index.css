@@ -343,7 +343,8 @@ header .navbar a {
     color: #fff;
 }
 
-.slide-content span {
+.slide-content ul {
+    padding-left: 20px;
     line-height: 20px;
     font-size: 16px;
     color: #fff;
@@ -638,7 +639,7 @@ body.light-mode .carousel-container {
 }
 
 body.light-mode .slide-content h2,
-body.light-mode .slide-content span {
+body.light-mode .slide-content ul {
   color: #333333;
 }
 
