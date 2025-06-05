@@ -433,86 +433,41 @@ header .navbar a {
 
 }
 
-/* configuração geral da 'caixa' que possui as imagens */
 .concept {
     display: flex;
     gap: 20px; 
     justify-content: center;
 }
 
-/* configuração das imagens */
-.media {
-    width: 300px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 60px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
+.concepts h3 {
+    display: none;
 }
 
-/* animação */
-.media:hover {
-    cursor: pointer; /* mudança do cursor */
-}
-
-/* configura o efeito para quando passar o cursor sobre as imagens */
-.overlay {
-    background: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 3;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-}
-
-/* animação */
-.media:hover .overlay {
-    opacity: 1;
-}
-
-/* configuração das imagens */
-.concept img {
-    width: 100%;
-    z-index: -1;
-    margin: auto;
-    transform: scale(1);
-    transition: all ease-in-out 0.5s;
-}
-
-/* animação */
-.media:hover img {
-    transform: scale(1.1);
-    filter: blur(2px);
-}
-
-/* configuração dos textos das imagens */
-.image-details {
+.concepts::before {
+    content: "(aperte nas imagens)";
+    display: block;
+    font-size: 1.6rem;
+    color: #fff;
     text-align: center;
-    color: white;
-    font-size: 20px;
-    z-index: 4;
-    position: absolute;
-    top: 100%;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-    text-decoration: none;
-}
-
-/* animação destes textos */
-.image-details:hover {
+    margin-bottom: 10px;
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #810021;
 }
 
-/* animação */
-.media:hover .image-details {
-    top: 40%;
-    opacity: 1;
+.media {
+    position: relative;
+}
+
+.media a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.media .overlay {
+    pointer-events: none;
 }
 
 /* rodapé */
@@ -710,6 +665,17 @@ body.light-mode .box a {
     header .navbar a {
         font-size: 1.8rem;
         padding: 0.5rem 1rem;
+    }
+
+    .mode-buttons .mode-btn,
+    .mode-selector .mode-btn {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.7rem;
+        margin: 0 2px;
+    }
+
+    .mode-selector i {
+        font-size: 1.3rem;
     }
 
     .navbar > a:hover {
