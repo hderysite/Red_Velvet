@@ -658,17 +658,21 @@ body.light-mode .box a {
     }
 
     header {
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         gap: 10px;
-        margin-top: 25px;
-        justify-content: center;
     }
 
     header .logo {
         display: none;
+    }
+
+    header .navbar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
     header .navbar a {
@@ -678,8 +682,8 @@ body.light-mode .box a {
 
     .mode-buttons .mode-btn,
     .mode-selector .mode-btn {
-        font-size: 2rem;
-        padding: 1rem 1.7rem;
+        font-size: 1.5rem;
+        padding: 0.8rem 1rem;
         margin: 0 2px;
     }
 
