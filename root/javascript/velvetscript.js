@@ -1,3 +1,53 @@
+const defaultLang = "pt";
+const supportedLangs = ["pt", "en"];
+let currentLang = defaultLang;
+
+function setLanguage(lang) {
+  if (!supportedLangs.includes(lang)) return;
+  currentLang = lang;
+
+  document.getElementById("btn_pt").classList.toggle("active", lang === "pt");
+  document.getElementById("btn_en").classList.toggle("active", lang === "en");
+
+  const file = lang === "pt" ? "ptvelvet" : "engvelvet";
+
+  fetch(`root/traduções/velvet/${file}.json`)
+    .then((res) => {
+      if (!res.ok) throw new Error('Arquivo não encontrado');
+      return res.json();
+    })
+    .then((data) => applyTranslations(data))
+    .catch((err) => console.error("Erro ao carregar traduções:", err));
+}
+
+function applyTranslations(data) {
+  if (!data) return;
+
+  safeSet("title_velvet", data.title_velvet);
+  safeSet("subtitle_velvet", data.subtitle_velvet);
+  safeSet("info_velvet", data.info_velvet);
+
+  const ids = [
+    "benatural", "oneof", "peekaboo", "badboy",
+    "reallybad", "psycho", "chillkill"
+  ];
+
+  ids.forEach((id) => {
+    safeSet(`date_${id}`, data[`date_${id}`]);
+    safeSet(`text_${id}`, data[`text_${id}`], true);
+  });
+}
+
+function safeSet(id, value, isHTML = false) {
+  const el = document.getElementById(id);
+  if (el) {
+    isHTML ? (el.innerHTML = value) : (el.textContent = value);
+  }
+}
+
+
+
+
 function setTheme(theme) {
   const body = document.body;
 
@@ -15,15 +65,26 @@ function setTheme(theme) {
 }
 
 function initThemeToggle() {
-  const savedTheme = localStorage.getItem("theme") || "dark"; // padrão escuro
+  const savedTheme = localStorage.getItem("theme") || "dark";
   setTheme(savedTheme);
 
   document.getElementById("light-mode").addEventListener("click", () => setTheme("light"));
   document.getElementById("dark-mode").addEventListener("click", () => setTheme("dark"));
 }
 
-document.addEventListener("DOMContentLoaded", initThemeToggle);
+function init() {
+  const btnPt = document.getElementById("btn_pt");
+  const btnEn = document.getElementById("btn_en");
 
+  if (btnPt && btnEn) {
+    btnPt.addEventListener("click", () => setLanguage("pt"));
+    btnEn.addEventListener("click", () => setLanguage("en"));
+  } else {
+    console.warn("Botões de linguagem não encontrados no DOM.");
+  }
 
-localStorage.removeItem('theme');
+  setLanguage(defaultLang);
+  initThemeToggle();
+}
 
+document.addEventListener("DOMContentLoaded", init);
