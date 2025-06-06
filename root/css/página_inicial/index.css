@@ -432,46 +432,86 @@ header .navbar a {
 
 }
 
+/* configuração geral da 'caixa' que possui as imagens */
 .concept {
     display: flex;
     gap: 20px; 
     justify-content: center;
-    flex-direction: column;
 }
 
-.concepts h3 {
-    display: none;
-}
-
-.concepts::before {
-    content: "(aperte nas imagens)";
-    display: block;
-    font-size: 1.6rem;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
+/* configuração das imagens */
 .media {
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 60px;
+    overflow: hidden;
     position: relative;
+    border-radius: 10px;
 }
 
-.media a {
+/* animação */
+.media:hover {
+    cursor: pointer; /* mudança do cursor */
+}
+
+/* configura o efeito para quando passar o cursor sobre as imagens */
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    z-index: 5;
+    width: 100%;
+    z-index: 3;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
 }
 
-.media .overlay {
-    pointer-events: none;
+/* animação */
+.media:hover .overlay {
+    opacity: 1;
 }
 
-.image-details p {
-    display: none;
+/* configuração das imagens */
+.concept img {
+    width: 100%;
+    z-index: -1;
+    margin: auto;
+    transform: scale(1);
+    transition: all ease-in-out 0.5s;
+}
+
+/* animação */
+.media:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+/* configuração dos textos das imagens */
+.image-details {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+    text-decoration: none;
+}
+
+/* animação destes textos */
+.image-details:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+/* animação */
+.media:hover .image-details {
+    top: 40%;
+    opacity: 1;
 }
 
 /* rodapé */
@@ -616,7 +656,7 @@ body.light-mode .image-details:hover {
 }
 
 body.light-mode .box a {
-    color: #333333b7;
+    color: #333333b7;   
 }
 
 .mode-buttons {
