@@ -914,10 +914,21 @@ body.light-mode .box a {
     }
 
     .concepts h3 {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 1.8rem;
+        display: none;
+    }
+
+    .concepts::before {
+        content: "(escolha um lado clicando nas imagens)";
+        display: block;
         text-align: center;
+        font-size: 1.4rem;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    body.light-mode .concepts::before {
+        color: black;
     }
 
     .concept {
