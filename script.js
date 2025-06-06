@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const readMoreBtn = document.querySelector(".read-more-btn");
   const extraText = document.querySelector(".extra-text");
