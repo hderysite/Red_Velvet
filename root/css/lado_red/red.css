@@ -430,6 +430,10 @@ body.light-mode .buttons a {
     color: #0a0a0a;
 }
 
+body.light-mode .timeline_circle {
+    box-shadow: 0 0 0 8px #fc001f;
+}
+
 
 
 @media (max-width: 768px) {

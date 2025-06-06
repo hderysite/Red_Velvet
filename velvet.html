@@ -6,10 +6,21 @@
     <title>Lado Velvet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="root/mídia/imagens/página_inicial/simbolo_red_velvet.png" type="image/símbolo_red-velvet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="root/css/lado_velvet/velvet.css" type="text/css">
 </head>
 
 <body>
+    <header class="top-header">
+        <div class="mode-buttons">
+            <button id="btn_pt" class="mode-btn">PT</button>
+            <button id="btn_en" class="mode-btn active">ENG</button>
+        </div>
+        <div class="mode-selector">
+            <button id="light-mode" class="mode-btn"><i class="fa fa-sun-o"></i></button>
+            <button id="dark-mode" class="mode-btn active"><i class="fa fa-moon-o"></i></button>
+        </div>
+    </header>
     <div class="page-wrapper">
         <div class="section-timeline-heading">
             <div class="container">
@@ -185,5 +196,6 @@
                 <a href="index.html"><img src="root/mídia/imagens/página_inicial/red_logo_shadow.png" alt="Logo Red Velvet"></a>
             </footer> 
         </div>
-    </main>                           
+    </main>
+    <script src="root/javascript/velvetscript.js"></script>                           
 </body>
