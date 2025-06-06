@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-/* importação de fontes */
+/* Importar fonte */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
-/* definindo font-family */
+/* Font-Family */
 @font-face {
     font-family: 'Velvet';
     src: url(../../fontes/página_inicial/demomidrunsscript-r9goo.otf) format('opentype');
@@ -16,7 +16,7 @@
     font-weight: normal;
 }
 
-/* melhor guia */
+/* Guia */
 :root {
     --font-velvet:'Velvet', cursive;
     --font-content:'Title', cursive;
@@ -24,7 +24,7 @@
     --black: #000;
 }
 
-/* configuração de toda a página - mudanças com os estilos específicos*/
+/* Configuração para toda página */
 * {
     margin: 0;
     padding: 0;
@@ -36,27 +36,26 @@
     box-sizing: border-box;
 }
 
-/* definindo cor de fundo */
+/* Definição de cor de fundo */
 body {
     background: #161616;
     transition: background 0.3s ease;
 }
 
-/* configuração html */
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth; /* rolagem suave */
-    scroll-padding-top: 6rem; /* espaçamento no topo - rolagem */
-    overflow-x: hidden; /* esconde rolagem horizontal */
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
 }
 
-/* configuração das sections (tem mais de uma) */
+/* Configuração Sections */
 section {
-    padding: 22rem 9%; /* layout com mais espaço */
+    padding: 22rem 9%;
 
 }
 
-/* configuração do cabeçalho */
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -68,10 +67,8 @@ header {
     justify-content: center;
     z-index: 1000;
     background-color: transparent;
-    /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); */
 }
 
-/* configuração da imagem logo - para ficar no tamanho proporcional */
 header .logo img {
     width: 90px;
     height: 90px;
@@ -79,7 +76,6 @@ header .logo img {
     transition: all 0.5s ease;
 }
 
-/* animação da logo para ficar vermelha - adição de foto */
 header .logo img:hover {
     content: url(../../mídia/imagens/página_inicial/simbolo_red_velvet.png);
     width: 70px;
@@ -87,7 +83,7 @@ header .logo img:hover {
     object-fit: cover;
 }
 
-/* configuração nav */
+/* Menu de navegação */
 header .navbar a {
     background-color: transparent;
     font-size: 2rem;
@@ -98,7 +94,6 @@ header .navbar a {
     transition: padding 0.5s ease, background-color 0.5s ease;
 }
 
-/* animação nav */
 .navbar > a:hover {
     color: #fff;
     border-radius: 5px;
@@ -106,431 +101,18 @@ header .navbar a {
     padding: 0.5rem 3rem;
 }
 
-/* configuração da parte 'home' ; imagem de fundo e degradê para outras partes */
-.home {
-    display: flex;
-    align-content: center;
-    min-height: 100vh;
-    background: url(../../mídia/imagens/página_inicial/red_cosmic3.jpg) no-repeat;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0));
-    background-size: cover;
-    background-position: center;
-}
-
-.home.light-mode {
-    background: url('../../mídia/imagens/página_inicial/red_feel1.jpg') no-repeat;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
-    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
-    background-size: cover;
-    background-position: center;
-}
-
-/* configuração da div que está presente título e texto */
-.home .content{
-    max-width: 50rem;
-    margin-top: -20px;
-}
-
-/* configuração do título dentro da div */
-.home .content h3{
-    background-color: transparent;
-    font-size: 8rem;
-    color: #810021;
-    font-family: var(--font-velvet);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
-
-}
-
-/* configuração do parágrafo dentro da div */
-.home .content p{
-    background-color: transparent;
-    font-size: 1.5rem;
-    color: #fff;
-    padding: 0rem 0;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-/* configuração específica da section 'about' - espaçamento */
-.about {
-    padding-top: 50px;
-    padding-bottom: 0px;
-}
-
-/* configuração das sections (tem mais de uma) */
-.heading {
-    font-family: var(--font-content);
-    text-align: center;
-    font-size: 4rem;
-    letter-spacing: 2px;
-    color: #fff;
-    padding: 0%;
-    margin: 2rem 0;
-    text-decoration: underline;
-    text-decoration-color: #810021;
-}
-
-/* configuração da div content - organização dos outros conteúdos */
-.about .content { 
-    display: flex; /* colocados de maneira flexível */
-    align-items: center; /* itens alinhas verticalmente ao centro */
-    gap: 2rem;
-    flex-wrap: wrap; /* quebra - próxima linha */
-    padding: 2rem 0;
-    padding-top: 2.5rem;
-}
-
-/* configuração da imagem */
-.about .content .gif img{
-    width: 100%;
-    border: 0.5rem solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-    height: 100%;
-    object-fit: cover;
-}
-
-/* configuração geral do class text-about ; adequa conforme o espaço - faz com que o texto esteja ao lado imagem - nessa situação */
-.about .content .text-about {
-    flex: 1 1 40rem;
-}
-
-/* configuração do subtítulo */
-.about .content .text-about h3 {
-    font-size: 3rem;
-    color: #fff;
-}
-
-/* configuração do parágrafo */
-.about .content .text-about p {
-    font-size: 1.5rem;
-    color: #999;
-    padding: .5rem 0;
-    padding-top: 1rem;
-    line-height: 1.5;
-    padding-bottom: 10px;
-    text-align: justify;
-}
-
-.extra-text {
-    display: none;
-    transition: all 0.3s ease;
-}
-
-.extra-text.active {
-    display: block;
-}
-
-.read-more-btn {
-    display: block;
-    margin-top: 10px;
-    background: #810021;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.read-more-btn:hover {
-    background-color: #000000bb;
-}
-
-
-/* div que configura a parte de INTEGRANTES */
-.box {
-    padding-top: 80px;
-    text-align: center;
-}
-
-/* configuração título */
-.box h1 {
-    font-family: var(--font-content);
-    text-align: center;
-    font-size: 4rem;
-    color: #fff;
-    letter-spacing: 2px;
-    padding: 0%;
-    margin: 2rem 0;
-    text-decoration: underline;
-    text-decoration-color: #810021;
-    padding-bottom: 22px;
-}
-
-/* configuração parágrafo */
-.box p {
-    font-size: 1.5rem;
-    color: #999;
-    line-height: 1.5;
-    max-width: 80%;
-    margin: 0;
-    margin-left: 210px;
-    margin-right: 210px;
-}
-
-/* configuração específica */
-.box p span {
-    color: white;
-    background-color: #810020b6;
-    padding: 0 5px;
-    border-radius: 3px;
-}
-
-/* configuração link */
-.box p a {
-    color: #999;
-}
-
-/* animação ao passar o mouse */
-.box p a:hover {
-    text-decoration: underline;
-    text-decoration-color: #810021;
-}
-
-/* configuração do contêiner das imagens */
-
-.carousel-container {
-    width: 80%;
-    max-width: 900px;
-    margin: 50px auto;
-    position: relative;
-    background: #4F0016;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    overflow: visible;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    display: none;
-}
-
-.slide.active {
-    display: flex;
-}
-
-.slide-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinha o texto à esquerda */
-  text-align: left; /* Garante alinhamento do conteúdo textual */
-}
-
-.slide img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-right: 20px;
-}
-
-.slide-content h2 {
-    margin: 0;
-    padding-bottom: 15px;
-    font-size: 32px;
-    color: #fff;
-}
-
-.slide-content ul {
-    padding-left: 20px;
-    line-height: 20px;
-    font-size: 16px;
-    color: #fff;
-}
-
-.nav {
+/* Menu de navegação - configuração dos botões de troca de idioma e modo claro/escuro*/
+.mode-buttons {
     position: absolute;
+    left: 6%;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 28px;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 50%;
-    transition: background 0.3s;
-    z-index: 1;
-}
-
-.nav:hover {
-    background: rgba(255, 255, 255, 1);
-}
-
-.nav.prev {
-    left: -60px;
-}
-
-.nav.next {
-    right: -60px;
-}
-
-/* configuração da section/id 'side' */
-.side {
-    padding-top: 80px;
-}
-
-/* configuração geral */
-.image-wrapper {
     display: flex;
-    flex-direction: column; /* organiza os elementos em coluna */
-    align-items: center; /* centraliza os itens no eixo horizontal */
-    text-align: center;
-}
-
-/* configuração do título */
-.image-wrapper h1 {
-    font-family: var(--font-content);
-    color: white;
-    font-size: 4rem;
-    letter-spacing: 2px;
-    padding-bottom: 50px;
-
-    text-decoration: underline;
-    text-decoration-color: #810021;
-}
-
-/* configuração do parágrafo */
-.image-wrapper p {
-    font-size: 1.5rem;
-    color: #999;
-    line-height: 1.5;
-    padding-bottom: 40px;
-    max-width: 80%;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* configuração do span - específico */
-.image-wrapper p span {
-    color: white;
-    background-color: #810020b6;
-    padding: 0 5px;
-    border-radius: 3px;
-}
-
-/* configuração dos subtítulos */
-.concepts h3 {
-    font-family: "Ubuntu Mono", monospace;
-    font-size: 24px; 
-    color: white;
-    display: inline-block;
-    margin-left: 195px;
-    margin-right: 165px;
-    margin-bottom: 5px;
-
-}
-
-/* configuração geral da 'caixa' que possui as imagens */
-.concept {
-    display: flex;
-    gap: 20px; 
-    justify-content: center;
-}
-
-/* configuração das imagens */
-.media {
-    width: 300px;
-    height: auto;
-    display: flex;
-    justify-content: center;
+    gap: 10px;
+    background-color: rgba(129, 0, 33, 0.8);
+    padding: 2px 6px;
+    border-radius: 8px;
     align-items: center;
-    margin: 0 60px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-}
-
-/* animação */
-.media:hover {
-    cursor: pointer; /* mudança do cursor */
-}
-
-/* configura o efeito para quando passar o cursor sobre as imagens */
-.overlay {
-    background: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 3;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-}
-
-/* animação */
-.media:hover .overlay {
-    opacity: 1;
-}
-
-/* configuração das imagens */
-.concept img {
-    width: 100%;
-    z-index: -1;
-    margin: auto;
-    transform: scale(1);
-    transition: all ease-in-out 0.5s;
-}
-
-/* animação */
-.media:hover img {
-    transform: scale(1.1);
-    filter: blur(2px);
-}
-
-/* configuração dos textos das imagens */
-.image-details {
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    z-index: 4;
-    position: absolute;
-    top: 100%;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-    text-decoration: none;
-}
-
-/* animação destes textos */
-.image-details:hover {
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #810021;
-}
-
-/* animação */
-.media:hover .image-details {
-    top: 40%;
-    opacity: 1;
-}
-
-/* rodapé */
-footer {
-    background: linear-gradient(to right, #81002062, #3c1d794b);
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-/* rodapé - parágrafo - frase */
-footer > p {
-    font-size: 12px;
-}
-
-/* imagem */
-footer > a > img {
-    width: 45px;
-    height: 45px;
 }
 
 .mode-selector {
@@ -567,6 +149,97 @@ footer > a > img {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Entrada do site - background imagem */
+.home {
+    display: flex;
+    align-content: center;
+    min-height: 100vh;
+    background: url(../../mídia/imagens/página_inicial/red_cosmic3.jpg) no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0));
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 50rem;
+    margin-top: -20px;
+}
+
+.home .content h3{
+    background-color: transparent;
+    font-size: 8rem;
+    color: #810021;
+    font-family: var(--font-velvet);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+
+}
+
+.home .content p{
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0rem 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Section sobre o grupo */
+.about {
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+
+.heading {
+    font-family: var(--font-content);
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: 0%;
+    margin: 2rem 0;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+.about .content { 
+    display: flex;
+    align-items: center; 
+    gap: 2rem;
+    flex-wrap: wrap; 
+    padding: 2rem 0;
+    padding-top: 2.5rem;
+}
+
+.about .content .gif img{
+    width: 100%;
+    border: 0.5rem solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .content .text-about {
+    flex: 1 1 40rem;
+}
+
+.about .content .text-about h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .content .text-about p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+/* Section sobre o grupo - texto para o botão 'Leia Mais' */
 .extra-text {
     display: none;
     transition: all 0.3s ease;
@@ -592,6 +265,289 @@ footer > a > img {
     background-color: #000000bb;
 }
 
+/* Div sobre as integrantes */
+.box {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.box h1 {
+    font-family: var(--font-content);
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 0%;
+    margin: 2rem 0;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+    padding-bottom: 22px;
+}
+
+.box p {
+    font-size: 1.5rem;
+    color: #999;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0;
+    margin-left: 210px;
+    margin-right: 210px;
+}
+
+.box p span {
+    color: white;
+    background-color: #810020b6;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+.box p a {
+    color: #999;
+}
+
+.box p a:hover {
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+/* Div para as integrantes - carroussel com as informações de cada membro */
+.carousel-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    position: relative;
+    background: #4F0016;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left; 
+}
+
+.slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.slide-content h2 {
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 32px;
+    color: #fff;
+}
+
+.slide-content ul {
+    padding-left: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* Div para as integrantes - botão para passar as informações do carroussel */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 1;
+}
+
+.nav:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.nav.prev {
+    left: -60px;
+}
+
+.nav.next {
+    right: -60px;
+}
+
+/* Section que direciona as outras páginas */
+.side {
+    padding-top: 80px;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    text-align: center;
+}
+
+.image-wrapper h1 {
+    font-family: var(--font-content);
+    color: white;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    padding-bottom: 50px;
+
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+.image-wrapper p {
+    font-size: 1.5rem;
+    color: #999;
+    line-height: 1.5;
+    padding-bottom: 40px;
+    max-width: 80%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-wrapper p span {
+    color: white;
+    background-color: #810020b6;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+.concepts h3 {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 24px; 
+    color: white;
+    display: inline-block;
+    margin-left: 195px;
+    margin-right: 165px;
+    margin-bottom: 5px;
+
+}
+
+.concept {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.media {
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 60px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.media:hover {
+    cursor: pointer; 
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+.media:hover .overlay {
+    opacity: 1;
+}
+
+/* Section para as outras páginas - configuração das imagens */
+.concept img {
+    width: 100%;
+    z-index: -1;
+    margin: auto;
+    transform: scale(1);
+    transition: all ease-in-out 0.5s;
+}
+
+.media:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+/*  Section para as outras páginas - configuração dos textos das imagens - apenas para telas maiores */
+.image-details {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+    text-decoration: none;
+}
+
+.image-details:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #810021;
+}
+
+.media:hover .image-details {
+    top: 40%;
+    opacity: 1;
+}
+
+/* rodapé */
+footer {
+    background: linear-gradient(to right, #81002062, #3c1d794b);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer > p {
+    font-size: 12px;
+}
+
+footer > a > img {
+    width: 45px;
+    height: 45px;
+}
+
+/* Configuração do site para o modo claro */
+.home.light-mode {
+    background: url('../../mídia/imagens/página_inicial/red_feel1.jpg') no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
+    background-size: cover;
+    background-position: center;
+}
 
 body.light-mode {
     background: #ffb6c179;
@@ -609,7 +565,6 @@ body.light-mode h1 {
 body.light-mode .about .content .text-about h3 {
     color: rgba(0, 0, 0, 0.863);
 }
-
 
 body.light-mode .about .content .text-about p {
     color: #333333;
@@ -659,37 +614,7 @@ body.light-mode .box a {
     color: #333333b7;   
 }
 
-.mode-buttons {
-    position: absolute;
-    left: 6%;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 10px;
-    background-color: rgba(129, 0, 33, 0.8);
-    padding: 2px 6px;
-    border-radius: 8px;
-    align-items: center;
-}
-
-/*
-.site-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    padding: 6px 8px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-*/
-
-.site-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-
+/* Responsividade para telas menores - celular */
 @media (max-width: 768px) {
     html {
         font-size: 50%;

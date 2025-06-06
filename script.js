@@ -1,3 +1,4 @@
+// <-- Carrossel - slides
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -10,6 +11,7 @@ function showSlide(index) {
   });
 }
 
+// <-- Avanço e volta - loop (slides)
 function nextSlide() {
   currentIndex = (currentIndex + 1) % slides.length;
   showSlide(currentIndex);
@@ -20,6 +22,8 @@ function prevSlide() {
   showSlide(currentIndex);
 }
 
+
+// <-- Modo Claro e escuro
 const lightBtn = document.getElementById("light-mode");
 const darkBtn = document.getElementById("dark-mode");
 const body = document.body;
@@ -43,6 +47,7 @@ function ativarModoEscuro() {
   localStorage.setItem("modo", "escuro");
 }
 
+// <-- Mudar as imagens conforme o tema ativado
 function atualizarImagens(modoClaroAtivo) {
   const imagensIntegrantes = {
     "integrante-yeri": {
@@ -92,6 +97,7 @@ function atualizarImagens(modoClaroAtivo) {
 lightBtn.addEventListener("click", ativarModoClaro);
 darkBtn.addEventListener("click", ativarModoEscuro);
 
+// <-- localStorage para aplicar o modo anterior ao carregar a imagem
 document.addEventListener("DOMContentLoaded", () => {
   const modoSalvo = localStorage.getItem("modo");
   if (modoSalvo === "claro") {
@@ -102,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// <-- Botão 'Leia Mais/Leia Menos'
 document.addEventListener("DOMContentLoaded", function () {
   const readMoreBtn = document.querySelector(".read-more-btn");
   const extraText = document.querySelector(".extra-text");
@@ -120,10 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// <-- Troca de idioma - inglês e português
 const defaultLang = "pt";
 const supportedLangs = ["pt", "en"];
 let currentLang = defaultLang;
 
+// <-- Aplicando arquivos JSON - ptindex e engindex
 function setLanguage(lang) {
   if (!supportedLangs.includes(lang)) return;
   currentLang = lang;

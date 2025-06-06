@@ -1,3 +1,4 @@
+// <-- Tema claro/escuro
 function setTheme(theme) {
   const body = document.body;
 
@@ -14,6 +15,7 @@ function setTheme(theme) {
   }
 }
 
+// <-- localStorage - salva a escolha
 function initThemeToggle() {
   const savedTheme = localStorage.getItem("theme") || "dark"; // padrão escuro
   setTheme(savedTheme);
@@ -24,16 +26,12 @@ function initThemeToggle() {
 
 document.addEventListener("DOMContentLoaded", initThemeToggle);
 
-
-localStorage.removeItem('theme');
-
-
-
-
+// <-- Tradução - inglês e português
 const defaultLang = "pt";
 const supportedLangs = ["pt", "en"];
 let currentLang = defaultLang;
 
+// <-- Aplicando arquivos JSON - ptred e engred
 function setLanguage(lang) {
   if (!supportedLangs.includes(lang)) return;
   currentLang = lang;

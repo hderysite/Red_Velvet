@@ -1,7 +1,9 @@
+// <-- Tradução - inglês e português
 const defaultLang = "pt";
 const supportedLangs = ["pt", "en"];
 let currentLang = defaultLang;
 
+// <-- Aplicando arquivos JSON - ptvelvet e engvelvet
 function setLanguage(lang) {
   if (!supportedLangs.includes(lang)) return;
   currentLang = lang;
@@ -45,9 +47,7 @@ function safeSet(id, value, isHTML = false) {
   }
 }
 
-
-
-
+// <-- Tema claro/escuro
 function setTheme(theme) {
   const body = document.body;
 
@@ -64,6 +64,7 @@ function setTheme(theme) {
   }
 }
 
+// <-- localStorage - salva a escolha
 function initThemeToggle() {
   const savedTheme = localStorage.getItem("theme") || "dark";
   setTheme(savedTheme);
@@ -76,6 +77,7 @@ function init() {
   const btnPt = document.getElementById("btn_pt");
   const btnEn = document.getElementById("btn_en");
 
+  // <-- Idioma trocado ao botão ser clicado
   if (btnPt && btnEn) {
     btnPt.addEventListener("click", () => setLanguage("pt"));
     btnEn.addEventListener("click", () => setLanguage("en"));
