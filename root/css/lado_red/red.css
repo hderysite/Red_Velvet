@@ -338,3 +338,75 @@ footer > a > img {
     height: 55px;
     margin-top: 1px;
 }
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 38px;
+    }
+    h4 {
+        margin-top: -25px;
+        margin-bottom: 30px;
+    }
+
+    .timeline_text{
+        font-size: 18px;
+    }
+
+    .timeline_item{
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: auto;
+        display: grid;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .timeline_date-text {
+        position: relative;
+        top: auto;
+        font-size: 40px;
+        text-align: left;
+        padding-left: 55px;
+    }
+
+    .timeline_left {
+        grid-column: span 2;
+        text-align: left;
+    }
+
+    .timeline_center {
+        justify-content: center;
+    }
+
+    .timeline_circle {
+        top: auto;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .timeline_progress {
+        left: 19px;
+    }
+
+    .timeline_progress_bar {
+        left: 19px;
+        inset: 0 auto auto;
+        position: absolute;
+        height: 100%;
+    }
+
+    .container {
+        width: 95vw;
+    }
+
+    .fundo2 {
+        height: 20vh;
+    }
+
+    .buttons .button1 {
+        margin-right: 40px;
+    }
+
+    video, img {
+        max-width: 100%;
+    }
+}
