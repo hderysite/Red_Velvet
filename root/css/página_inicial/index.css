@@ -701,7 +701,7 @@ body.light-mode .box a {
         -webkit-mask-image: none !important;
         mask-image: none !important;
         min-height: auto !important;
-        margin-top: 60px;
+        margin-top: 80px;
     }
 
     .home.light-mode {
