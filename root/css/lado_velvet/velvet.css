@@ -378,7 +378,7 @@ header {
 }
 
 body.light-mode main {
-  background-color: #FFE6E2 ;
+  background-color: #FFE6E2;
 }
 
 body.light-mode .section-timeline-heading,
@@ -406,4 +406,103 @@ body.light-mode .buttons a {
 
 body.light-mode .timeline_circle {
     box-shadow: 0 0 0 8px #89023e;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 38px;
+    }
+    h4 {
+        margin-top: -25px;
+        margin-bottom: 30px;
+    }
+
+    header {
+        display: block;
+        position: relative;
+        height: auto;
+    }
+
+    .mode-buttons,
+    .mode-selector {
+        top: 10px;
+        padding: 2px 4px;
+        gap: 6px;
+    }
+
+    .mode-buttons {
+        left: 4%;
+    }
+
+    .mode-selector {
+        right: 4%;
+    }
+
+    .mode-btn {
+        font-size: 16px;
+        padding: 4px 6px;
+    }
+
+    .timeline_text, 
+    .timeline_text a {
+        font-size: 18px;
+    }
+
+    .timeline_item{
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: auto;
+        display: grid;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .timeline_date-text {
+        position: relative;
+        top: auto;
+        font-size: 40px;
+        text-align: left;
+        padding-left: 55px;
+    }
+
+    .timeline_left {
+        grid-column: span 2;
+        text-align: left;
+    }
+
+    .timeline_center {
+        justify-content: center;
+    }
+
+    .timeline_circle {
+        top: auto;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .timeline_progress {
+        left: 19px;
+    }
+
+    .timeline_progress_bar {
+        left: 19px;
+        inset: 0 auto auto;
+        position: absolute;
+        height: 100%;
+    }
+
+    .container {
+        width: 95vw;
+    }
+
+    .fundo2 {
+        height: 20vh;
+    }
+
+    .buttons .button1 {
+        margin-right: 40px;
+    }
+
+    video, img {
+        max-width: 100%;
+    }
 }
