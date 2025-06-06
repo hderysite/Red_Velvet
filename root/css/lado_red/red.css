@@ -403,6 +403,35 @@ header {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+body.light-mode main {
+  background-color: #FFE6E2 ;
+}
+
+body.light-mode .section-timeline-heading,
+body.light-mode .fundo1,
+body.light-mode .fundo2 {
+    background-color: #FFE6E2 ;
+}
+
+body.light-mode .timeline-main_heading-wrapper p {
+    color: #0a0a0a;
+} 
+
+body.light-mode .overlay-fade-top{
+    display: none;
+}
+
+body.light-mode .timeline_date-text,
+body.light-mode .timeline_text {
+    color: #0a0a0a;
+}
+
+body.light-mode .buttons a {
+    color: #0a0a0a;
+}
+
+
+
 @media (max-width: 768px) {
     h2 {
         font-size: 38px;
