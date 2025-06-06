@@ -672,6 +672,7 @@ body.light-mode .box a {
     align-items: center;
 }
 
+/*
 .site-btn {
     background: none;
     border: none;
@@ -682,6 +683,7 @@ body.light-mode .box a {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+*/
 
 .site-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);

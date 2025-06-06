@@ -91,6 +91,7 @@ h4 {
 /* cor da header */
 .section-timeline-heading {
     background-color: #0a0a0a;
+    position: relative;
 }
 
 /* centralização dos conteúdos */
@@ -348,7 +349,8 @@ footer > a > img {
         margin-bottom: 30px;
     }
 
-    .timeline_text{
+    .timeline_text, 
+    .timeline_text a {
         font-size: 18px;
     }
 
