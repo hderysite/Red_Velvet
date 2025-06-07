@@ -663,10 +663,6 @@ body.light-mode .box a {
         padding: 0.5rem 1rem;
     }
 
-    .overlay {
-        display: none;
-    }
-
     .home {
         background: none !important;
         -webkit-mask-image: none !important;
@@ -882,6 +878,15 @@ body.light-mode .box a {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .overlay {
+        pointer-events: none;
+    }
+    
+    .image-details {
+        position: relative;
+        z-index: 10;
     }
 
     footer {
