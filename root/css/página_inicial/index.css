@@ -664,7 +664,7 @@ body.light-mode .box a {
     }
 
     .overlay {
-        pointer-events: none;
+        display: none;
     }
 
     .home {
