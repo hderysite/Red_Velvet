@@ -663,6 +663,10 @@ body.light-mode .box a {
         padding: 0.5rem 1rem;
     }
 
+    .overlay {
+        pointer-events: none;
+    }
+
     .home {
         background: none !important;
         -webkit-mask-image: none !important;
